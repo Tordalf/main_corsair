@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="stylesSheets/nav.css">
+    <title>
+        nav
+    </title>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="head">
+                <img src="images/logo.png" class="logo" alt="">
+                <h1>Cors'air</h1>
+            </div>
+
+            <div class="menu">
+                <a href="#">Team</a>
+                <a href="#">Sponsor</a>
+                <a href="#">Event</a>
+                <a href="#">Réseaux</a>
+            </div>
+            <div id="marker"></div>
+
+
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </div>
+    <section class="banner"></section>
+
+    <script type="text/javascript">
+        window.addEventListener("scroll", function() {
+            var header = document.querySelector(".container");
+            header.classList.toggle("sticky", window.scrollY > 0);
+        })
+    </script>
+
+    <script type="text/javascript">
+        var marker = document.querySelector('#marker');
+        var item = document.querySelectorAll('.container nav a');
+
+        function indicator(e) {
+            marker.style.left = e.offsetLeft + "px";
+            marker.style.width = e.offsetWidth + "px";
+        }
+
+        item.forEach(link => {
+            link.addEventListener('click', (e) => {
+                indicator(e.target);
+            })
+        })
+    </script>
+
+    <script src="script/nav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="navbar.css">
+    <title>
+        nav
+    </title>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Sponsor</a></li>
+            <li><a href="#">Event</a></li>
+            <li><a href="#">Social Media</a></li>
+        </ul>
+    </header>
+    <section class="banner"></section>
+    <script type="text/javascript">
+        window.addEventListener("scroll", function() {
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0);
+        })
+    </script>
+</body>
+
+</html>
